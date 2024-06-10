@@ -15,12 +15,18 @@ const Singup = () => {
   const [avatar, setAvatar] = useState(null);
 
   const handleFileInputChange = (e) => {
+
     const file = e.target.files[0];
     setAvatar(file);
   };
-
+  console.log('====================================');
+  console.log('asdas');
+  console.log('===========1=========================');
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('===========2=========================');
+    console.log('asdas');
+    console.log('====================================');
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
     const newForm = new FormData();
@@ -29,10 +35,13 @@ const Singup = () => {
     newForm.append("name", name);
     newForm.append("email", email);
     newForm.append("password", password);
-
+    console.log('====================================');
+    console.log('asdas');
+    console.log('====================================');
     axios
       .post(`${server}/user/create-user`, newForm, config)
       .then((res) => {
+        console.log(res.data);
         toast.success(res.data.message);
         setName("");
         setEmail("");
@@ -40,6 +49,7 @@ const Singup = () => {
         setAvatar();
       })
       .catch((error) => {
+        console.log('asdasd21');
         toast.error(error.response.data.message);
       });
   };

@@ -13,6 +13,9 @@ const { isAuthenticated, isAdmin } = require("../middleware/auth");
 
 router.post("/create-user", upload.single("file"), async (req, res, next) => {
   try {
+    console.log('====================================');
+    console.log('asdasd');
+    console.log('====================================');
     const { name, email, password } = req.body;
     const userEmail = await User.findOne({ email });
 
@@ -27,27 +30,36 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
       });
       return next(new ErrorHandler("User already exists", 400));
     }
-
+    console.log('======2==============================');
+    console.log('asdasd');
+    console.log('====================================');
     const filename = req.file.filename;
     const fileUrl = path.join(filename);
-
+    console.log('================3====================');
+    console.log('asdasd');
+    console.log('====================================');
     const user = {
       name: name,
       email: email,
       password: password,
       avatar: fileUrl,
     };
-
+    console.log('============5========================');
+    console.log('asdasd');
+    console.log('====================================');
     const activationToken = createActivationToken(user);
-
+    console.log('asdas');
     const activationUrl = `https://eshop-tutorial-cefl.vercel.app/activation/${activationToken}`;
-
+    console.log('============5=66=======================');
+    console.log('asdasd');
+    console.log('====================================');
     try {
-      await sendMail({
-        email: user.email,
-        subject: "Activate your account",
-        message: `Hello ${user.name}, please click on the link to activate your account: ${activationUrl}`,
-      });
+      // await sendMail({
+      //   email: user.email,
+      //   subject: "Activate your account",
+      //   message: `Hello ${user.name}, please click on the link to activate your account: ${activationUrl}`,
+      // });
+
       res.status(201).json({
         success: true,
         message: `please check your email:- ${user.email} to activate your account!`,
