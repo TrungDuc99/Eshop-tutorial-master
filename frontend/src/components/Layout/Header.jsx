@@ -17,6 +17,7 @@ import { backend_url } from "../../server";
 import Cart from "../cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
 import { RxCross1 } from "react-icons/rx";
+import logo from "../../Assests/images/logo.png";
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -59,7 +60,8 @@ const Header = ({ activeHeading }) => {
           <div>
             <Link to="/">
               <img
-                src="https://shopo.quomodothemes.website/assets/images/logo.svg"
+                src={logo}
+                className="w-[170px] h-[60px]"
                 alt=""
               />
             </Link>
@@ -98,27 +100,26 @@ const Header = ({ activeHeading }) => {
             ) : null}
           </div>
 
-          <div className={`${styles.button}`}>
-            <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
+          <div >
+            {/* <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
               <h1 className="text-[#fff] flex items-center">
                 {isSeller ? "Go Dashboard" : "Become Seller"}{" "}
                 <IoIosArrowForward className="ml-1" />
               </h1>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
       <div
-        className={`${
-          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#3321c8] h-[70px]`}
+        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+          } transition hidden 800px:flex items-center justify-between w-full bg-[#009D9E] h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
         >
           {/* categories */}
           <div onClick={() => setDropDown(!dropDown)}>
-            <div className="relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block">
+            {/* <div className="relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block">
               <BiMenuAltLeft size={30} className="absolute top-3 left-2" />
               <button
                 className={`h-[100%] w-full flex justify-between items-center pl-10 bg-white font-sans text-lg font-[500] select-none rounded-t-md`}
@@ -136,7 +137,7 @@ const Header = ({ activeHeading }) => {
                   setDropDown={setDropDown}
                 />
               ) : null}
-            </div>
+            </div> */}
           </div>
           {/* navitems */}
           <div className={`${styles.noramlFlex}`}>
@@ -144,7 +145,7 @@ const Header = ({ activeHeading }) => {
           </div>
 
           <div className="flex">
-            <div className={`${styles.noramlFlex}`}>
+            {/* <div className={`${styles.noramlFlex}`}>
               <div
                 className="relative cursor-pointer mr-[15px]"
                 onClick={() => setOpenWishlist(true)}
@@ -169,7 +170,7 @@ const Header = ({ activeHeading }) => {
                   {cart && cart.length}
                 </span>
               </div>
-            </div>
+            </div> */}
 
             <div className={`${styles.noramlFlex}`}>
               <div className="relative cursor-pointer mr-[15px]">
@@ -202,9 +203,8 @@ const Header = ({ activeHeading }) => {
 
       {/* mobile header */}
       <div
-        className={`${
-          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        }
+        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+          }
       w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}
       >
         <div className="w-full flex items-center justify-between">
