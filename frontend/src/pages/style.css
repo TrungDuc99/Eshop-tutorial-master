@@ -1,0 +1,18 @@
+.page-content {
+    display: flex;
+  }
+  
+  .fixed-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: auto;
+    z-index: 1000;
+  }
+  
+  .board-container {
+    margin-left: 256px; /* Adjust this value based on the width of your menu */
+    padding: 20px;
+    flex-grow: 1;
+  }

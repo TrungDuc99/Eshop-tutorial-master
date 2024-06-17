@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  client_digiwork:
+    container_name: client_digiwork
+    image: "node:latest"
+    user: "root"
+    restart: always
+    ports:
+      - "3001:3000"
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    # Uncomment and configure the environment file if needed
+    # env_file:
+    #   - .env
+    # Uncomment and configure dependencies if needed
+    # depends_on:
+    #   - tbt_redis_staging
+    command: bash -c "yarn install --legacy-peer-deps && yarn start"
+    environment:
+      - TZ=Asia/Ho_Chi_Minh

@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  client_digiwork:
+    container_name: server_digiwork
+    image: "node:18.10.0"
+    user: "root"
+    restart: always
+    ports:
+      - "9888:9888"
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    # Uncomment and configure the environment file if needed
+    env_file:
+      - .env
+    # Uncomment and configure dependencies if needed
+    # depends_on:
+    #   - tbt_redis_staging
+    command: bash -c "npm install --legacy-peer-deps && npm run start"
+    environment:
+      - TZ=Asia/Ho_Chi_Minh

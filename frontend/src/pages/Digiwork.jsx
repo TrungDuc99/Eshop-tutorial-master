@@ -6,8 +6,52 @@ import Header from "../components/Layout/Header";
 import Loader from "../components/Layout/Loader";
 import ProductCard from "../components/Route/ProductCard/ProductCard";
 import styles from "../styles/styles";
-import Board from '@asseinfo/react-kanban'
-import '@asseinfo/react-kanban/dist/styles.css'
+import Board from '@asseinfo/react-kanban';
+import '@asseinfo/react-kanban/dist/styles.css';
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { Menu, Switch } from 'antd';
+const items = [
+  {
+    key: 'sub1',
+    label: 'Navigation One',
+    icon: <MailOutlined />,
+    children: [
+      { key: '1', label: 'Option 1' },
+      { key: '2', label: 'Option 2' },
+      { key: '3', label: 'Option 3' },
+      { key: '4', label: 'Option 4' },
+    ],
+  },
+  {
+    key: 'sub2',
+    label: 'Navigation Two',
+    icon: <AppstoreOutlined />,
+    children: [
+      { key: '5', label: 'Option 5' },
+      { key: '6', label: 'Option 6' },
+      {
+        key: 'sub3',
+        label: 'Submenu',
+        children: [
+          { key: '7', label: 'Option 7' },
+          { key: '8', label: 'Option 8' },
+        ],
+      },
+    ],
+  },
+  {
+    key: 'sub4',
+    label: 'Navigation Three',
+    icon: <SettingOutlined />,
+    children: [
+      { key: '9', label: 'Option 9' },
+      { key: '10', label: 'Option 10' },
+      { key: '11', label: 'Option 11' },
+      { key: '12', label: 'Option 12' },
+    ],
+  },
+];
+
 const dataConstant = {
   "code": 200,
   "success": true,
@@ -96,16 +140,7 @@ const dataConstant = {
         ],
         "cardsQty": 3
       },
-      {
-        "id": "5ef9162d-40a8-489d-b41f-e5066a139515",
-        "settingId": "3adb6729-ba6a-4d06-a19e-01abdabbd78d",
-        "title": "ACTIVE",
-        "settingCode": "S025",
-        "color": "f5a623",
-        "index": 217,
-        "cards": [],
-        "cardsQty": 0
-      },
+
       {
         "id": "454597cd-d0d0-4e4e-a6fb-1d8a423f694d",
         "settingId": "77f9c095-2a35-47ee-bad2-1e27e22fef31",
@@ -253,26 +288,6 @@ const dataConstant = {
           }
         ],
         "cardsQty": 1
-      },
-      {
-        "id": "120a1f96-0bb5-4427-bc1e-6dfcc1544312",
-        "settingId": "e781e84c-aa80-47ca-9359-3cda87efff22",
-        "title": "READY TO TEST",
-        "settingCode": "S004",
-        "color": "e5cd9c",
-        "index": 231,
-        "cards": [],
-        "cardsQty": 0
-      },
-      {
-        "id": "948089ec-86d7-4365-a6c6-fe96047d813d",
-        "settingId": "13ab46e8-b5bb-4184-83fb-f4f2af26f300",
-        "title": "Test Failed",
-        "settingCode": "S026",
-        "color": "d0021b",
-        "index": 232,
-        "cards": [],
-        "cardsQty": 0
       },
       {
         "id": "3b9e813f-059a-4943-92bb-4e8fc16f67f5",
@@ -425,16 +440,6 @@ const dataConstant = {
         "cardsQty": 3
       },
       {
-        "id": "bb791f34-cc45-4ea4-bbfc-f431fe79ea4e",
-        "settingId": "a5b1b581-679f-4e58-8ba6-ac3da1c16b0a",
-        "title": "RESPONDED",
-        "settingCode": "S009",
-        "color": "50e3c2",
-        "index": 337,
-        "cards": [],
-        "cardsQty": 0
-      },
-      {
         "id": "2364e255-bc3f-47cf-bfe1-df914de2695d",
         "settingId": "6b67b219-1ab9-4b22-812b-71e66a6b7288",
         "title": "ON HOLD",
@@ -442,328 +447,6 @@ const dataConstant = {
         "color": "ddc2e3",
         "index": 376,
         "cards": [
-          {
-            "id": "96f4abd5-39e2-485e-87f8-c402e8a318ce",
-            "title": "[AppC][OTP_SMS] - Không gửi mã xác thực OTP qua số điện thoại thuộc nhà mạng MobiPhone",
-            "index": 12083,
-            "taskCode": 12083,
-            "createdDate": "2024-05-30T11:18:50+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "354800f1-57b4-434c-8f3a-9811ff785e1f",
-              "settingCode": "I002",
-              "color": "",
-              "title": "BUG"
-            },
-            "subcardsCount": 0
-          },
-          {
-            "id": "803be595-aac5-4859-8ef8-8bb03ea8e72d",
-            "title": "[BE] - Tạo temple mẫu cho mail",
-            "index": 10100,
-            "taskCode": 10100,
-            "createdDate": "2024-04-15T08:06:13+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "ea7a3e43-2d78-4b1d-ac26-d62ab30585a6",
-              "settingCode": "I005",
-              "color": "",
-              "title": "SUBTASK"
-            },
-            "subcardsCount": 0
-          },
-          {
-            "id": "8f55e5b5-fed3-4aeb-9ab4-8e4dff918301",
-            "title": "[BE] - Cấu hình BE để xử lý gửi mail",
-            "index": 10099,
-            "taskCode": 10099,
-            "createdDate": "2024-04-15T08:05:54+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "ea7a3e43-2d78-4b1d-ac26-d62ab30585a6",
-              "settingCode": "I005",
-              "color": "",
-              "title": "SUBTASK"
-            },
-            "subcardsCount": 0
-          },
-          {
-            "id": "9956cc84-7ae0-4bbc-88c9-bfd4a3cd01ba",
-            "title": "[BE] - handle gửi mail",
-            "index": 10098,
-            "taskCode": 10098,
-            "createdDate": "2024-04-15T08:05:20+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "d06a6b69-31e3-4cbd-8c90-2b4effce0acc",
-              "settingCode": "I001",
-              "color": "",
-              "title": "TASK"
-            },
-            "subcardsCount": 2
-          },
-          {
-            "id": "0334d38b-f9ba-4e5c-bac2-3a1abf53d3b4",
-            "title": "[BE] - Handle gửi thông báo qua ZNS, Email, SMS",
-            "index": 10032,
-            "taskCode": 10032,
-            "createdDate": "2024-04-12T08:41:39+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "92d82386-80c5-43bd-9050-cf750a957063",
-              "settingCode": "I004",
-              "color": "",
-              "title": "US"
-            },
-            "subcardsCount": 7
-          },
-          {
-            "id": "907a3d68-f08c-47f4-82ac-520ef530ed90",
-            "title": "[BE] - Tích hợp code upload file, để đây file  sang một server lưu trữ khác sử dụng form data ",
-            "index": 7154,
-            "taskCode": 7154,
-            "createdDate": "2024-02-02T14:16:58+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "92d82386-80c5-43bd-9050-cf750a957063",
-              "settingCode": "I004",
-              "color": "",
-              "title": "US"
-            },
-            "subcardsCount": 1
-          },
-          {
-            "id": "d69cfc20-46ef-48d0-8f88-7f5e3f143a6c",
-            "title": "[BE] - Đánh giá những phần thay đổi hoặc thay thế toàn bộ của code api upload, và sau khi thay đổi nó sẽ ảnh hưởng như thế nào",
-            "index": 7153,
-            "taskCode": 7153,
-            "createdDate": "2024-02-02T14:13:10+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "92d82386-80c5-43bd-9050-cf750a957063",
-              "settingCode": "I004",
-              "color": "",
-              "title": "US"
-            },
-            "subcardsCount": 0
-          },
-          {
-            "id": "702b5060-14a8-40bc-8790-5b367d1128ce",
-            "title": "[BE] - Thêm server path vào field \"link\" để đổi link cũ chỉ có file path thành full link",
-            "index": 7152,
-            "taskCode": 7152,
-            "createdDate": "2024-02-02T14:10:40+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "92d82386-80c5-43bd-9050-cf750a957063",
-              "settingCode": "I004",
-              "color": "",
-              "title": "US"
-            },
-            "subcardsCount": 0
-          },
-          {
-            "id": "e5ed2296-2bc8-4e00-a7f0-0085a6265086",
-            "title": "[BE] - List ra file trả về sẽ bao gôm những thông tin nào, field nào, và FE sẽ cần lấy field nào để hiện thị hình",
-            "index": 7150,
-            "taskCode": 7150,
-            "createdDate": "2024-02-02T14:09:34+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "92d82386-80c5-43bd-9050-cf750a957063",
-              "settingCode": "I004",
-              "color": "",
-              "title": "US"
-            },
-            "subcardsCount": 0
-          },
-          {
-            "id": "5a698ea7-7851-43ee-9529-7aeb531cb221",
-            "title": "[BE] - List ra các table ảnh hưởng và đến luồng upload mới ",
-            "index": 7149,
-            "taskCode": 7149,
-            "createdDate": "2024-02-02T14:09:08+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "92d82386-80c5-43bd-9050-cf750a957063",
-              "settingCode": "I004",
-              "color": "",
-              "title": "US"
-            },
-            "subcardsCount": 0
-          },
-          {
-            "id": "0b9eb652-89c3-4204-9a6a-b168758802a2",
-            "title": "[BE] - Tìm giải pháp cho phần lưu trữ file trên server cloud storage",
-            "index": 6936,
-            "taskCode": 6936,
-            "createdDate": "2024-01-30T09:11:02+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "92d82386-80c5-43bd-9050-cf750a957063",
-              "settingCode": "I004",
-              "color": "",
-              "title": "US"
-            },
-            "subcardsCount": 1
-          },
-          {
-            "id": "13480d8c-646f-4271-af90-04b1e223b3c5",
-            "title": "[F21.2 Cấu hình quỹ thiện nguyện] - Khi không nhập số vào trường thứ tự, nội dung của error popup hiện ra \"OrderNumber là bắt buộc\"",
-            "index": 5290,
-            "taskCode": 5290,
-            "createdDate": "2023-12-27T15:29:17+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "354800f1-57b4-434c-8f3a-9811ff785e1f",
-              "settingCode": "I002",
-              "color": "",
-              "title": "BUG"
-            },
-            "subcardsCount": 0
-          },
-          {
-            "id": "38f86326-6a69-46c9-b652-3705da4fe62c",
-            "title": "[F21.2 Cấu hình quỹ thiện nguyện] - Chiến dịch vẫn được lưu thành công sau khi sửa chiến dich bằng cách xoá field : Hướng đến, Địa điểm...",
-            "index": 5287,
-            "taskCode": 5287,
-            "createdDate": "2023-12-27T15:02:28+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "354800f1-57b4-434c-8f3a-9811ff785e1f",
-              "settingCode": "I002",
-              "color": "",
-              "title": "BUG"
-            },
-            "subcardsCount": 0
-          },
-          {
-            "id": "b46f7dde-0383-4a36-8846-f32fee2843da",
-            "title": "[F21.2 Cấu hình quỹ thiện nguyện] - Sau khi thêm một chiến dịch với data sai format vào field ngày, nội dung của error popup bị sai",
-            "index": 5284,
-            "taskCode": 5284,
-            "createdDate": "2023-12-27T14:59:31+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "354800f1-57b4-434c-8f3a-9811ff785e1f",
-              "settingCode": "I002",
-              "color": "",
-              "title": "BUG"
-            },
-            "subcardsCount": 0
-          },
           {
             "id": "5a73505b-fcd6-40fb-9bfd-94dfd35e8f07",
             "title": "[F21.2 Cấu hình quỹ thiện nguyện] - Chiến dịch vẫn được thêm mới thành công khi không upload avatar ",
@@ -974,73 +657,7 @@ const dataConstant = {
         ],
         "cardsQty": 23
       },
-      {
-        "id": "0c00c6da-00f9-4f30-ace2-0ddc344da900",
-        "settingId": "e034ca94-2243-4592-a3cb-9f3a8f9eb000",
-        "title": "CLOSE",
-        "settingCode": "S007",
-        "color": "a59faa",
-        "index": 383,
-        "cards": [
-          {
-            "id": "c1ecda5f-869e-462d-8832-3561a31dcf32",
-            "title": ".",
-            "index": 8361,
-            "taskCode": 8361,
-            "createdDate": "2024-03-05T14:03:23+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "ea7a3e43-2d78-4b1d-ac26-d62ab30585a6",
-              "settingCode": "I005",
-              "color": "",
-              "title": "SUBTASK"
-            },
-            "subcardsCount": 0
-          },
-          {
-            "id": "a4fef1b7-0dcd-469f-a4ba-57909f5880ce",
-            "title": "[BE] - Tích hợp api của bên INCOM vào flow OTP sms ",
-            "index": 8044,
-            "taskCode": 8044,
-            "createdDate": "2024-02-27T06:56:25+07:00",
-            "starred": false,
-            "assignee": {
-              "id": "6fc4b661-7c51-40dd-bcb8-96c2202d01ac",
-              "firsttitle": null,
-              "lasttitle": null,
-              "fulltitle": "Đỗ Trung Đức",
-              "avatar": null
-            },
-            "projectLabels": [],
-            "issueType": {
-              "settingId": "d06a6b69-31e3-4cbd-8c90-2b4effce0acc",
-              "settingCode": "I001",
-              "color": "",
-              "title": "TASK"
-            },
-            "subcardsCount": 0
-          }
-        ],
-        "cardsQty": 2
-      },
-      {
-        "id": "17029eab-a4b8-4472-afe6-c4a8c343e563",
-        "settingId": "f14ded21-2677-472b-b21d-86514f06f64d",
-        "title": "Ready to UAT",
-        "settingCode": "S024",
-        "color": "b8e986",
-        "index": 385,
-        "cards": [],
-        "cardsQty": 0
-      }
+
     ]
   }
 }
@@ -1049,6 +666,18 @@ const DigiworkPage = () => {
   const categoryData = searchParams.get("category");
   const { allProducts, isLoading } = useSelector((state) => state.products);
   const [data, setData] = useState([]);
+  const [theme, setTheme] = useState('light');
+  const [current, setCurrent] = useState('1');
+
+  const changeTheme = (value) => {
+    setTheme(value ? 'dark' : 'light');
+  };
+
+  const onClick = (e) => {
+    console.log('click ', e);
+    setCurrent(e.key);
+  };
+
   const board = {
     columns: [
       {
@@ -1074,8 +703,7 @@ const DigiworkPage = () => {
         ]
       }
     ]
-  }
-
+  };
 
   useEffect(() => {
     if (categoryData === null) {
@@ -1086,25 +714,33 @@ const DigiworkPage = () => {
         allProducts && allProducts.filter((i) => i.category === categoryData);
       setData(d);
     }
-    //    window.scrollTo(0,0);
-  }, [allProducts]);
+    // window.scrollTo(0, 0);
+  }, [allProducts, categoryData]);
 
   return (
     <>
-      {
-        false ? (
-          <Loader />
-        ) : (
-          <div>
-            <Header activeHeading={3} />
-            <br />
-            <br />
+      {false ? (
+        <Loader />
+      ) : (
+        <div>
+          <Header activeHeading={3} />
+
+          <div className="flex justify-between">
+            <Menu
+              theme={theme}
+              onClick={onClick}
+              style={{ width: 256 }}
+              defaultOpenKeys={['sub1']}
+              selectedKeys={[current]}
+              mode="inline"
+              items={items}
+            />
 
             <Board initialBoard={dataConstant.data} />
-            <Footer />
           </div>
-        )
-      }
+          <Footer />
+        </div>
+      )}
     </>
   );
 };
